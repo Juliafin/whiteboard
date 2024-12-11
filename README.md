@@ -1,5 +1,6 @@
 # Teacher Manager
 
+This repository is a rewrite of [WhiteBoard Classic](https://github.com/Juliafin/whiteboard_classic)
 
 ## Purpose 
 
@@ -55,12 +56,11 @@
 
 # Frontend
 
+<!-- To be implemented -->
 - HTML5
 - CSS3
-- JavaScript
-- JQuery
-- AJAX
-- Moment.js
+- JavaScript (React)
+- Luxon.js
 - FlexSlider2
 - TimePicki
 
@@ -69,6 +69,7 @@
 
 - Node.js
 - Express.js
+- Typescript
 - Faker.js
 - MongoDB
 - Mongoose.js
