@@ -1,0 +1,298 @@
+### GET endpoint
+GET http://localhost:8080/cu-manager
+
+### GET endpoint with auth as teacher
+GET http://localhost:8080/cu-manager/
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfdXNlciI6eyJfaWQiOiI1OTBkMzhmNjI0NmYwNjQ2NDhlMmEyOTMiLCJ1c2VybmFtZSI6IkphbmV0RnJhbmtzIiwicGFzc3dvcmQiOiIkMmEkMTAkc1I1VXBZUlN4RTBNRHpDVHc1WUNmZWJDWTV2Sk9qM2JUWWlNczcuMHoyTFE4NENEdS8vRm0iLCJyb2xlIjoidGVhY2hlciIsImZpcnN0X25hbWUiOiJKYW5ldCIsImxhc3RfbmFtZSI6IkZyYW5rcyIsIl9fdiI6MH0sImlhdCI6MTQ5NDA0NzY5Mn0.jxXc6HkCQoC-eFPbG9DJG1x-l6JQdr4DT2tBBCkwPc0
+
+
+### GET as student
+GET http://localhost:8080/cu-manager
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfdXNlciI6eyJfaWQiOiI1OTEwMGFlYjZlN2IwMzM4MTA0ZmNhNWIiLCJ1c2VybmFtZSI6IkFuZ2llTHUiLCJwYXNzd29yZCI6IiQyYSQxMCQuNWZZaUxWcUQ2Mm9reWhySGdCa2lPOVBKMWtUL0dKdU4zeFNzaTFaZzJBMjVqbVFxRno0eSIsInJvbGUiOiJzdHVkZW50IiwiZmlyc3RfbmFtZSI6IkFuZ2llIiwibGFzdF9uYW1lIjoiTHUiLCJfX3YiOjB9LCJpYXQiOjE0OTQyMjM3NTF9.Y0hE0jKZhwdGfbE96jJZSQG7vKcQFj866oMcv6Ktpb4 
+
+
+
+
+
+### Query email GET test
+
+GET http://localhost:8080/cu-manager?email=Cesar.Waelchi13@gmail.com
+
+
+###
+
+### Post Test
+POST http://localhost:8080/cu-manager
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfdXNlciI6eyJfaWQiOiI1OTBkMzhmNjI0NmYwNjQ2NDhlMmEyOTMiLCJ1c2VybmFtZSI6IkphbmV0RnJhbmtzIiwicGFzc3dvcmQiOiIkMmEkMTAkc1I1VXBZUlN4RTBNRHpDVHc1WUNmZWJDWTV2Sk9qM2JUWWlNczcuMHoyTFE4NENEdS8vRm0iLCJyb2xlIjoidGVhY2hlciIsImZpcnN0X25hbWUiOiJKYW5ldCIsImxhc3RfbmFtZSI6IkZyYW5rcyIsIl9fdiI6MH0sImlhdCI6MTQ5NDA0NzY5Mn0.jxXc6HkCQoC-eFPbG9DJG1x-l6JQdr4DT2tBBCkwPc0
+Content-Type: application/json
+
+  { 
+    "first_name": "Emily",
+    "last_name": "Johnson",
+    "email": "emaily@yahoo.com",
+    "parent_first_name": "Danny",
+    "parent_last_name": "Johnson",
+    "address": {
+        "street_address": "342 ryder St",
+        "state": "OR",
+        "zipcode": "56754",
+        "city": "Birmingham"
+        },
+    "student_lesson_time": {
+      "weekday": "Friday",
+      "startTime": "Fri Apr 28 2017 14:50:25 GMT-0400 (Eastern Daylight Time)",
+      "endTime": "Fri Apr 28 2017 23:50:25 GMT-0400 (Eastern Daylight Time)"
+    },
+    "teacher_comments": "Student has made excellent progress."
+  }
+
+
+###
+
+
+
+### PUT Test with address
+
+PUT http://localhost:8080/cu-manager/59052ceaad296b4974ed4aad
+Content-Type: application/json
+
+  {
+    "first_name": "Bono",
+    "address": {
+        "street_address": "Some other address",
+        "state": "NY",
+        "city":"New York",
+        "zipcode": "11251"  }
+  }
+
+###
+
+
+### PUT Test with parent_first_name
+
+PUT http://localhost:8080/cu-manager/5907840a45bd3b4f2866d509
+Content-Type: application/json
+
+  {
+    "parent_first_name": "Josie"
+  }
+
+
+
+### PUT Test with parent_first_name
+
+PUT http://localhost:8080/cu-manager/59052ceaad296b4974ed4aa1
+Content-Type: application/json
+
+  {
+    "index": "0",
+    "id": "59052ceaad296b4974ed4aa1",
+      "student_curriculum":
+        {
+          "project_name": "some other thing",
+          "project_description": "Testing this.",
+          "teacher_project_comments": "New comments.",
+          "project_date": "2017-04-29T22:40:20.455Z"
+        }    
+  }
+
+
+###
+
+
+### Delete specific student curriculum
+
+DELETE http://localhost:8080/cu-manager/student-curriculum-projects/59052ceaad296b4974ed4a99
+Content-Type: application/json
+        
+        {
+          "student_curriculum": {
+          "project_name": "connect bandwidth",
+          "project_description": "Similique blanditiis praesentium eius id dolor voluptate. Vel error aliquid et quaerat velit aut. Ea dolores dolorum animi placeat necessitatibus. Quam animi veritatis qui odio est quidem nesciunt non. Eos qui sit nihil adipisci quae qui dolor enim consequuntur.",
+          "teacher_project_comments": "Cupiditate voluptatum consequatur quaerat et. Laborum voluptas est numquam non quia. Eaque vero suscipit eos modi.",
+          "_id": "59052ceaad296b4974ed4a9b",
+          "project_date": "2017-04-30T00:16:41.549Z"
+          }
+        }
+
+
+
+
+###
+
+
+# db['student-teacher-dbs'].updateOne (
+# {"_id" : ObjectId("59052ceaad296b4974ed4a85") }, 
+# { $set: { "student_curriculum.0": 
+# {
+#   "project_name": "some other thing",
+#   "project_description": "Testing this.",
+#   "teacher_project_comments": "New comments.",
+#   "_id": ObjectId("5905165542c15b3040ece23e"),
+#   "project_date": "2017-04-29T22:40:20.455Z"
+#   }}}, 
+#   {new:true} )
+
+
+### testing Authenticate
+
+GET http://localhost:8080/auth/authenticate
+
+
+### get all users
+
+GET http://localhost:8080/auth/users
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOnsiX2lkIjoiNTkwYzI0ZWJlMzEzMDEyMzQ0NzdmZGY4IiwiZmlyc3RfbmFtZSI6Ik5pa2l0YSIsImxhc3RfbmFtZSI6IlRlcnJ5Iiwicm9sZSI6InN0dWRlbnQiLCJwYXNzd29yZCI6Ikk0cEk2Znk0V2xsdmRsdCIsInVzZXJuYW1lIjoiR3VpZG9fQW5kZXJzb24iLCJfX3YiOjB9LCJpYXQiOjE0OTQwMDAxOTZ9.Y2rVv2A5I-0Lb2yEoqH1faunNtp6AzSdRTFejh3JT1I
+
+
+
+### Try to login with a user
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{        
+      "password": "I4pI6fy4Wllvdlt",
+      "username": "Guido_Anderson"   
+}
+
+
+### Register a new user with missing fields
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{        
+      "password": "I4pI6fy4Wllvdlt",
+      "username": "John"   
+}
+
+### Login with user data
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{        
+    "password": "SomeREally#%1nicE!",
+    "username": "JanetFranks"
+}
+
+### Register a new user with correct fields
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{        
+      "password": "SomeREally#%1nicE!",
+      "username": "JanetFranks",
+      "first_name": "Janet",
+      "last_name": "Franks",
+      "role": "teacher"   
+}
+
+### Register a new user student with correct fields
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{        
+      "password": "!7423Adfras!",
+      "username": "AngieLu",
+      "first_name": "Angie",
+      "last_name": "Lu",
+      "role": "student"   
+}
+
+
+### Login as student
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{        
+    "password": "!7423Adfras!",
+    "username": "AngieLu"
+}
+
+
+
+
+
+### Another jwt token test
+GET http://localhost:8080/auth/users
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfdXNlciI6eyJfaWQiOiI1OTBkMzhmNjI0NmYwNjQ2NDhlMmEyOTMiLCJ1c2VybmFtZSI6IkphbmV0RnJhbmtzIiwicGFzc3dvcmQiOiIkMmEkMTAkc1I1VXBZUlN4RTBNRHpDVHc1WUNmZWJDWTV2Sk9qM2JUWWlNczcuMHoyTFE4NENEdS8vRm0iLCJyb2xlIjoidGVhY2hlciIsImZpcnN0X25hbWUiOiJKYW5ldCIsImxhc3RfbmFtZSI6IkZyYW5rcyIsIl9fdiI6MH0sImlhdCI6MTQ5NDA0NzY5Mn0.jxXc6HkCQoC-eFPbG9DJG1x-l6JQdr4DT2tBBCkwPc0
+
+
+### Random words
+
+GET http://localhost:8080/auth/stuff
+
+
+
+
+### Register a new user with correct fields
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{        
+      "password": "4@df934A",
+      "username": "RobertW",
+      "first_name": "Rob",
+      "last_name": "Wag",
+      "role": "teacher"   
+}
+
+### Login with Angie Wu
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "username": "AngieWu",
+  "password": "asag#dfj24!"
+}
+
+
+### GET with Angie Wu
+
+GET http://localhost:8080/cu-manager
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfdXNlciI6eyJfaWQiOiI1OTEzYmNmOTMzOTZiYjQwNWNjYmFiOTkiLCJ1c2VybmFtZSI6IkFuZ2llV3UiLCJwYXNzd29yZCI6IiQyYSQxMCRTNjRpeUt4MHBSVkVjTVBEOS9scmp1ZWpZazYzUnhhLzZYRzZocmszdi41d0d2ajRlV3IySyIsInJvbGUiOiJ0ZWFjaGVyIiwiZmlyc3RfbmFtZSI6IkFuZ2llIiwibGFzdF9uYW1lIjoiV3UiLCJfX3YiOjB9LCJpYXQiOjE0OTQ0NjU4Njl9.Dyk5t1GW5pW6dwYd4nGeJW36SU4x2EoNhehzxd5277w
+
+
+### POST Angie Wu's Student
+POST http://localhost:8080/cu-manager
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfdXNlciI6eyJfaWQiOiI1OTEzYmNmOTMzOTZiYjQwNWNjYmFiOTkiLCJ1c2VybmFtZSI6IkFuZ2llV3UiLCJwYXNzd29yZCI6IiQyYSQxMCRTNjRpeUt4MHBSVkVjTVBEOS9scmp1ZWpZazYzUnhhLzZYRzZocmszdi41d0d2ajRlV3IySyIsInJvbGUiOiJ0ZWFjaGVyIiwiZmlyc3RfbmFtZSI6IkFuZ2llIiwibGFzdF9uYW1lIjoiV3UiLCJfX3YiOjB9LCJpYXQiOjE0OTQ0NjU4Njl9.Dyk5t1GW5pW6dwYd4nGeJW36SU4x2EoNhehzxd5277w
+
+
+
+
+{ 
+    "first_name": "Ken",
+    "last_name": "Johnson",
+    "email": "Kj@gmail.com",
+    "parent_first_name": "Manny",
+    "parent_last_name": "Allen",
+    "address": {
+        "street_address": "2523 World St",
+        "state": "OR",
+        "zipcode": "90152",
+        "city": "Birmingham",
+        "country": "United States"
+        },
+    "student_lesson_time": {
+      "weekday": "Friday",
+      "startTime": "Fri Apr 28 2017 22:50:25 GMT-0400 (Eastern Daylight Time)",
+      "endTime": "Fri Apr 28 2017 23:50:25 GMT-0400 (Eastern Daylight Time)"
+    },
+    "teacher_comments": "Just added a new student",
+    "student_curriculum": [
+        {
+            "project_name": "Student is working on a new microchip",
+            "project_description": "This project is going to be amazing.",
+            "teacher_project_comments": "More testing",
+            "project_date": "Thu Apr 17 2016 13:45:55 GMT-0400 (Eastern Daylight Time)"
+        },
+        {
+            "project_name": "asdflkn",
+            "project_description": "This piece is going to be amazing.",
+            "teacher_project_comments": "Work on your phrasing.",
+            "project_date": "Thu Apr 17 2016 13:45:55 GMT-0400 (Eastern Daylight Time)"
+        }
+    ]
+  }

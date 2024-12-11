@@ -1,0 +1,585 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+}
+html, body {
+    /* For the loading indicator to be vertically centered ensure */
+    /* the html and body elements take up the full viewport */
+    min-height: 100%;
+}
+html.loading {
+    /* Replace #333 with the background-color of your choice */
+    /* Replace loading.gif with the loading image of your choice */
+    background: #333 url('loading.gif') no-repeat 50% 50%;
+
+    /* Ensures that the transition only runs in one direction */
+    -webkit-transition: background-color 0;
+    transition: background-color 0;
+}
+body {
+    -webkit-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+}
+html.loading body {
+    /* Make the contents of the body opaque during loading */
+    opacity: 0;
+
+    /* Ensures that the transition only runs in one direction */
+    -webkit-transition: opacity 0;
+    transition: opacity 0;
+}
+nav {
+  position: fixed;
+  display: block;
+  z-index: 2;
+  height: 7vh;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgb(178, 18, 18);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 2px 5px 0px #3e3c3c;
+}
+
+.nav li.selected {
+  background-color: rgb(1, 73, 99);
+  transition: background-color linear 300ms;
+}
+
+body {
+  background-color: rgb(33, 80, 97);
+  font-family: Roboto, sans-serif;
+}
+
+.signupbox {
+  display: block;
+  position: relative;
+  width: 66vw;
+  min-height: 100%;
+  padding: 0px 4% 0 4%;
+  margin: 9% auto;
+  background-color: white;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  display: flex;
+}
+
+h1 {
+  padding-top: 3vw;
+  text-align: center;
+  color: rgb(80, 80, 80);
+  margin: 0;
+  margin-bottom: 3vw;
+  font-size: 3vw;
+}
+
+h2.features {
+  color: white;
+  margin-bottom: 1vw;
+  margin-top: 3vw;
+  font-family: Trocchi;
+  font-weight: 100;
+  margin-left: 1vw;
+  font-size: 1.8vw;
+  position: relative;
+  width: auto;
+  padding-left: 1vw;
+  border-radius: .4vw;
+}
+
+h2.features.F_one {
+  margin-left: 3vw;
+  margin-top: 1vw;
+}
+
+h2.features.F_two {
+  margin-left: 12vw;
+}
+
+h2.features.F_three {
+  margin-left: 20vw;
+}
+
+h2.features.F_four {
+  margin-left: 28vw;
+}
+
+h1.landing_heading {
+  color: aliceblue;
+  font-size: 5vw;
+  font-family: Trocchi;
+  margin-top: 9vh;
+  font-kerning: none;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+label {
+  display: block;
+  text-align: left;
+  color: black;
+  margin: 1.2vw 0 1vw 10vw;
+  font-weight: bold;
+  margin-left: 10vw;
+  font-size: 2vw;
+}
+
+input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 38vw;
+  height: 4vw;
+  padding: 1vw;
+  border: .2vw solid;
+  border-color: #868686;
+  border-radius: .4vw;
+  font-size: 1.5vw;
+}
+
+button {
+  margin-top: 0vw;
+  width: 19vw;
+  height: 5vw;
+  background-color: rgb(33, 80, 97);
+  color: white;
+  font-size: 2vw;
+  border: none;
+  font-family: Trocchi;
+  margin-bottom: 3vw;
+  cursor: pointer;
+}
+
+button.try_it_out {
+  margin-top: 3vw;
+  border-radius: .3vw;
+}
+
+button#login_button {
+  margin-top: 14vw;
+}
+
+label#teacher_label,
+label#student_label {
+  display: inline;
+}
+
+input#teacher,
+input#student {
+  display: inline;
+  width: 17%;
+}
+
+label#teacher_label,
+label#student_label {
+  margin-left: 0;
+}
+
+input[type="radio"] {
+  height: 2vw;
+  margin-top: 3vw;
+  padding: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  color: rgb(255, 133, 3);
+  transition: all ease-in-out 200ms;
+}
+
+p {
+  text-align: center;
+}
+
+p.error {
+  color: #cc6969;
+  font-family: monospace;
+  margin-top: 2%;
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+p.success {
+  color: lightgreen;
+  font-size: 2vw;
+  position: relative;
+  top: -1.7vw;
+}
+
+p>a {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color: rgb(69, 173, 76);
+}
+
+.accountq,
+a.login {
+  margin-top: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.teacher_student_select {
+  text-align: center;
+  height: 9vw;
+}
+
+.button_container {
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: center;
+}
+
+.nav>li {
+  text-decoration: none;
+  outline: none;
+  list-style-type: none;
+  color: aliceblue;
+  font-family: Ruboto;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1.6vw;
+  width: 20%;
+  text-align: center;
+}
+
+li:hover {
+  transform: scale(1.1);
+  transition: all linear 300ms;
+}
+
+nav li:active {
+  color: #ffaa5b;
+  transition: color linear 300ms;
+}
+
+li#logged_in {
+  font-size: 1.1vw;
+  text-transform: initial;
+}
+
+@keyframes displayElement {
+  from {
+    transform: scale(.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: (1);
+  }
+}
+
+.popIn {
+  animation-name: displayElement;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal
+}
+
+.curriculum_image {
+  background: url('./../images/curriculum_new.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 2vw;
+  filter: brightness(92%) opacity(0.75);
+  z-index: -1;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  left: 20vw;
+  top: 2vw;
+  font-size: 1.5vw;
+  color: #5e5ecc;
+  font-weight: 600;
+  border-bottom: 1px dotted grey;
+  width: 1vw;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 21vw;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  font-size: 1vw;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+label[for="Password"] {
+  margin-top: 0;
+}
+
+@media only screen and (max-device-height: 1024px) and (max-device-width: 768px) {
+  nav {
+    height: 33vw;
+  }
+  .nav {
+    flex-wrap: wrap;
+  }
+  .nav li {
+    width: 100vw;
+    font-size: 3.8vw;
+    border-bottom: .2vw white solid;
+    height: 6vw;
+    padding-top: .6vw;
+  }
+  li#logged_in {
+    font-size: 4vw;
+  }
+  li#logged_in br {
+    display: none
+  }
+  li#logged_in span {
+    margin-left: 1vw;
+  }
+  .curriculum_image {
+    height: 180vw;
+    filter: brightness(90%);
+  }
+  h1.landing_heading {
+    margin-top: 40vw;
+    margin-bottom: 10vw;
+    font-size: 7vw;
+  }
+  h2.features {
+    margin-bottom: 10vw;
+    font-size: 3.5vw;
+  }
+  .signupbox {
+    margin-top: 51vw;
+    height: 110vw;
+    width: 85vw;
+  }
+  .signup {
+    height: 100vw;
+    margin: 0;
+  }
+  .signup h1 {
+    font-size: 4.7vw;
+    margin-bottom: 7vw;
+    margin-top: 7vw;
+  }
+  .signup label {
+    margin-top: 0vw;
+    margin-bottom: 3vw;
+    margin-right: 2vw;
+    display: inline-block;
+    font-size: 3vw;
+  }
+  .signup label[for=Password] {
+    margin-top: -5vw;
+  }
+  .signup input {
+    height: 6vw;
+    display: inline-block;
+    position: relative;
+    top: -8vw;
+    left: 9vw;
+    font-size: 4vw;
+  }
+  .teacher_student_select {
+    position: relative;
+    margin: 2vw;
+    top: -6vw;
+  }
+  input[type="radio"] {
+    top: 0;
+    left: 5vw;
+    box-shadow: none;
+  }
+  .teacher_student_select label {
+    position: relative;
+    left: 6vw;
+    top: -2vw;
+  }
+  button#register_button {
+    position: relative;
+    top: 5vw;
+  }
+  button#login_button,
+  button#register_button {
+    height: 7vw;
+    width: 30vw;
+    font-size: 5vw;
+  }
+  p.error {
+    position: relative;
+    display: inline-block;
+    top: -7vw;
+    font-size: 3vw;
+  }
+  .login h1 {
+    font-size: 5.5vw;
+    margin-top: 7vw;
+    margin-bottom: 9vw;
+  }
+  .login label {
+    margin-bottom: 4vw;
+    margin-left: 19.5vw;
+    font-size: 4vw;
+  }
+  .login input {
+    height: 7vw;
+    margin-bottom: 5vw;
+    font-size: 3vw;
+  }
+
+  .login .error {
+    font-size: 3vw;
+  }
+  p.success {
+    position: relative;
+    top: -5vw;
+  }
+  button.try_it_out {
+    height: 10vw;
+    width: 30vw;
+    font-size: 3vw;
+  }
+
+  .tooltip {
+    font-size: 3vw;
+    left: 25vw;
+    top: -2.5vw
+  }
+  .tooltiptext {
+    height: 10vw;
+    width: 36vw;
+    top: -11vw;
+    left: 3vw;
+    font-size: 1.8vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 39/34) {
+  h1.landing_heading {
+    margin-top: 10vw;
+    font-size: 6vw;
+  }
+  .curriculum_image {
+    height: 150vw
+  }
+  h2.features {
+    margin-bottom: 7vw;
+    font-size: 3vw;
+  }
+  .nav>li {
+    font-size: 2.7vw;
+  }
+  li#logged_in {
+    font-size: 2.3vw;
+  }
+  div.signupbox {
+    margin-top: 20vw;
+  }
+  form.signup,
+  form.login {
+    height: 60vw;
+  }
+  button.try_it_out {
+    height: 10vw;
+    width: 30vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 8/5) {
+  div.curriculum_image {
+    height: 60vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 16/9) {
+  div.curriculum_image {
+    height: 54vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 4/3) {
+  div.curriculum_image {
+    height: 74vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 2/1) {
+  div.curriculum_image {
+    height: 48vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 3/2) {
+  div.curriculum_image {
+    height: 64vw;
+  }
+}
+
+@media only screen and (max-height: 412px) and (max-device-width: 732px) {
+  .nav {
+    flex-wrap: initial;
+  }
+
+  nav {
+    height: 8vw;
+  }
+
+  .nav > li {
+    border: none;
+    font-size: 3vw;
+    padding-top: 1.5vw;
+    width: 16vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+
+  div.nav > li#logged_in {
+    font-size: 2.5vw;
+    margin-left: 8vw;
+    margin-top: -2vw;
+  }
+
+  h1.landing_heading {
+    margin-top: 15vw;
+  }
+
+  div.signupbox {
+    margin-top: 18vw;
+  }
+
+
+}
