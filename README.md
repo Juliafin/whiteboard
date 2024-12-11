@@ -88,3 +88,6 @@ This repository is a rewrite of [WhiteBoard Classic](https://github.com/Juliafin
 - Password recovery mechanism
 - Income calculator
 - Flexible lesson time assignments
+- Oauth signin with major providers
+- Mobile app - Android
+- Mobile app - IOS
