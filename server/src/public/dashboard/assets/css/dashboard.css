@@ -1,0 +1,1471 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+html {
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+}
+html, body {
+    /* For the loading indicator to be vertically centered ensure */
+    /* the html and body elements take up the full viewport */
+    min-height: 100%;
+}
+html.loading {
+    /* Replace #333 with the background-color of your choice */
+    /* Replace loading.gif with the loading image of your choice */
+    background: #333 url('loading.gif') no-repeat 50% 50%;
+
+    /* Ensures that the transition only runs in one direction */
+    -webkit-transition: background-color 0;
+    transition: background-color 0;
+}
+body {
+    -webkit-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+}
+html.loading body {
+    /* Make the contents of the body opaque during loading */
+    opacity: 0;
+
+    /* Ensures that the transition only runs in one direction */
+    -webkit-transition: opacity 0;
+    transition: opacity 0;
+}
+.unauthorized {
+  background-image: url(./../images/403.jpg);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  background-size: contain;
+  margin: 0 auto;
+  position: relative;
+  left: 0;
+  right: 0;
+  background-position: center center;
+}
+
+p.unauthorized_redirect {
+  position: fixed;
+  display: inline-block;
+  top: 13.3vw;
+  font-size: 1.5vw;
+  color: red;
+  left: 28.5%;
+  font-weight: 600;
+}
+
+body {
+  background-color: rgb(33, 80, 97);
+  font-family: sans-serif;
+}
+
+label {
+  display: inline-block;
+  margin: 2% auto;
+  font-family: Trocchi;
+  color: #ffaa5b;
+  font-size: 2vw;
+  height: 2vw;
+}
+
+label[for="weekday"],
+label[for="state"] {
+  margin-right: 1vw;
+}
+
+input#street_address:focus {
+  transform: scale(1.051, 1.10);
+}
+
+h1 {
+  padding: 4vw 4vw 2vw 4vw;
+  color: white;
+  margin-top: 2vw;
+  font-family: Trocchi;
+  font-size: 4vw;
+}
+
+h2.features {
+  color: white;
+  margin-bottom: 1vw;
+  margin-top: 3vw;
+  font-family: Trocchi;
+  font-weight: 100;
+  margin-left: 1vw;
+  font-size: 1.8vw;
+  position: relative;
+  width: auto;
+  padding-left: 1vw;
+  border-radius: .4vw;
+  text-align: left;
+}
+
+h2.features.F_one {
+  margin-left: 3vw;
+  margin-top: 1vw;
+}
+
+h2.features.F_two {
+  margin-left: 12vw;
+}
+
+h2.features.F_three {
+  margin-left: 20vw;
+}
+
+h2.features.F_four {
+  margin-left: 28vw;
+}
+
+nav {
+  position: fixed;
+  display: block;
+  z-index: 2;
+  height: 7vh;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgb(178, 18, 18);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 2px 5px 0px #3e3c3c;
+}
+
+.nav li.selected {
+  background-color: rgb(1, 73, 99);
+  transition: background-color linear 300ms;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: center;
+}
+
+.nav>li {
+  text-decoration: none;
+  outline: none;
+  list-style-type: none;
+  color: aliceblue;
+  font-family: Trocchi;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1.4vw;
+  width: 100%;
+  text-align: center;
+}
+
+.nav li:nth-child(3) {
+  margin-left: 3vw;
+}
+
+.nav li:nth-child(1) {
+  margin-left: 3vw;
+  margin-right: 3vw;
+  width: 80%;
+}
+
+li#logged_in {
+  font-size: 1.1vw;
+}
+
+fieldset.general_info {
+  margin-top: 5vw;
+}
+
+fieldset {
+  color: antiquewhite;
+  margin-top: 3vw;
+  padding: 2vw 0;
+  font-size: 3vw;
+  min-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-top: #ffaa5b 1px solid;
+  padding-bottom: 1vw;
+  padding-top: 3vw;
+}
+
+input#apartment_number {
+  width: 5vw;
+  margin-left: 0;
+}
+
+input#street_address {
+  width: 35vw;
+}
+
+input[type="radio"] {
+  box-shadow: none;
+}
+
+input {
+  height: 3vw;
+  border-radius: .2vw;
+  border: none;
+  box-shadow: 3px 3px 5px 0px #444343;
+  text-align: left;
+  padding-left: 1vw;
+  margin: 0 4vw 0px 1vw;
+  font-size: 2vw;
+}
+
+label[for="student_search"] {
+  display: block;
+  text-align: left;
+  margin-left: 14vw;
+}
+
+input#student_search {
+  width: 47vw;
+  margin: 1vw 0 4vw 0;
+}
+
+input#student_search:hover,
+input#student_search:focus {
+  transition: none;
+  transform: none;
+}
+
+input#add_student_project,
+input#edit_student_project {
+  height: 3vw;
+  width: 3vw;
+  margin: 0 2vw;
+}
+
+input#edit_student_project {
+  height: 2vw;
+  width: 2vw;
+}
+
+textarea {
+  width: 80vw;
+  height: 24vw;
+  margin-bottom: 4vw;
+  text-align: left;
+  font-size: 2vw;
+  padding: 1vw;
+  resize: none;
+}
+
+textarea:focus {
+  border: 2px solid rgb(178, 18, 18);
+  transform: scale(1.02);
+}
+
+select {
+  box-shadow: 3px 5px 5px 0px #3e3c3c;
+  border: none;
+  border-radius: 2px;
+  width: 20vw;
+  margin-right: 3vw;
+  height: 3vw;
+  font-size: 2vw;
+}
+
+.mode_select {
+  text-align: center;
+  border-bottom: 1px solid #ffaa5b;
+  padding: 1vw;
+}
+
+input#parent_first_name {
+  width: 13vw;
+  margin-left: 0.5vw;
+}
+
+input#parent_last_name {
+  width: 18vw;
+  margin-left: 0.5vw;
+}
+
+input#first_name,
+input#existing_first_name {
+  width: 13vw;
+}
+
+input#last_name,
+input#existing_last_name {
+  width: 21vw;
+}
+
+input#city {
+  width: 18vw;
+  margin-right: 2vw;
+}
+
+input#zipcode {
+  width: 10vw;
+}
+
+input[type="date"] {
+  font-size: 2vw;
+}
+
+label[for="startTime"],
+label[for="endTime"] {
+  display: inline-block;
+  margin-right: .5vw;
+}
+
+input#startTime {
+  display: inline-block;
+  left: -86px;
+}
+
+input#endTime {
+  display: inline-block;
+}
+
+input#project_number {
+  width: 8vw;
+  margin: 0;
+  padding-left: 2.3vw;
+}
+
+.project input {
+  margin: 0;
+}
+
+p.optional_text {
+  color: aliceblue;
+  font-size: 2vw;
+  margin-top: 2vw;
+}
+
+span.optional {
+  color: rgb(178, 18, 18);
+  margin-left: .5vw;
+}
+
+label>span {
+  font-size: 1.5vw;
+}
+
+p.error {
+  display: inline-block;
+  color: rgb(255, 43, 43);
+  margin-right: 2vw;
+  font-size: 1.5vw;
+}
+
+.errors {
+  border-top: 0.2vw solid red;
+  border-bottom: 0.2vw solid red;
+  margin: 4vw 0;
+  padding-bottom: 1vw;
+}
+
+form.project>label {
+  display: block;
+  margin-bottom: 4vh;
+}
+
+input#project_comments {
+  width: 76vw;
+  height: 50vw;
+}
+
+form.project input {
+  height: 3.5vw;
+  width: 30vw;
+}
+
+.hidden {
+  transform: scale(0);
+}
+
+@keyframes displayElement {
+  from {
+    transform: scale(.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: (1);
+  }
+}
+
+.popIn {
+  animation-name: displayElement;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal
+}
+
+.slowPopIn {
+  animation-name: displayElement;
+  animation-duration: 600ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal
+}
+
+@keyframes removeElement {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: (0);
+  }
+}
+
+.slowPopOut {
+  animation-name: removeElement;
+  animation-duration: 600ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal
+}
+
+.card_container {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  min-height: 100%;
+  margin: 1vw;
+}
+
+div.card {
+  width: 19vw;
+  height: 25vw;
+  background-color: #fffaf3;
+  /* border: 1px solid rgba(0, 0, 0, 0.18); */
+  border-radius: 1px;
+  margin: 0px 6.5vw;
+  margin-bottom: 5vw;
+  margin-top: 4vw;
+  box-shadow: 1px 1px 5px black;
+}
+
+.card_color {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 14vw;
+}
+
+.delete_student_confirmation_container {
+  position: fixed;
+  top: 13vw;
+  right: 0;
+  left: 0;
+  height: 25vw;
+  width: 37vw;
+  text-align: center;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.87);
+  font-family: trocchi;
+  box-shadow: .3vw .3vw 0.2vw black;
+  border: .1vw solid rgba(0, 0, 0, 0.69);
+}
+
+.delete_student_confirmation_container p {
+  color: white;
+  padding-top: 2vw;
+  font-size: 2vw;
+}
+
+.delete_student_project_confirmation_container.popIn {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 12vw;
+  margin: 0 auto;
+  width: 38vw;
+  height: 22vw;
+  z-index: 3000;
+  background: white;
+  border: .3vw solid black;
+  box-shadow: .2vw .2vw .2vw black;
+}
+
+.delete_color_strip,
+.delete_project_color_strip {
+  margin-bottom: 1vw;
+  padding-bottom: 2vw;
+}
+
+button.delete_student_confirmation,
+button.cancel_delete_student_confirmation {
+  color: white;
+  font-family: trocchi;
+}
+
+.delete_project_color_strip p {
+  padding: 1vw;
+  font-size: 2vw;
+}
+
+.student_container {
+  height: 54%;
+}
+
+.student_container p {
+  padding: 0vw;
+  font-size: 1.3vw;
+  margin-top: 10%;
+}
+
+p.success {
+  color: lightgreen;
+}
+
+@keyframes cardFlip {
+  from {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: (1);
+  }
+}
+
+.flip {
+  animation-name: cardFlip;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal
+}
+
+.card:nth-child(4n+1)>.card_color,
+.student_version .slides>li:nth-child(4n+1) {
+  background-color: #9c27b0;
+}
+
+.card:nth-child(4n+2)>.card_color,
+.student_version .slides>li:nth-child(4n+2) {
+  background-color: #ff5722;
+}
+
+.card:nth-child(4n+3)>.card_color,
+.student_version .slides>li:nth-child(4n+3) {
+  background-color: #ffc107;
+}
+
+.card:nth-child(4n+4)>.card_color,
+.student_version .slides>li:nth-child(4n+4) {
+  background-color: #4caf50;
+}
+
+button {
+  cursor: pointer;
+}
+
+button.add_student_project,
+button.student_info,
+button.student_exit,
+button.edit_info,
+button.student_curriculum,
+.exit_student_curriculum,
+.edit_student_curriculum_modal,
+.add_student_curriculum_modal,
+button.delete_student,
+button.cancel_delete_student_confirmation,
+button.delete_student_confirmation,
+button.delete_student_curriculum_modal,
+button.delete_student_project_confirmation,
+button.cancel_delete_student_project_confirmation {
+  margin-top: 2vw;
+  border-radius: .2vw;
+  outline: none;
+  border: none;
+  background: white;
+  padding: 0.3vw;
+  width: 60%;
+  max-height: 22%;
+  font-size: 1.1vw;
+  border: .1vw grey solid;
+}
+
+button[name="add_student"],
+button[name="edit_student"],
+button#add_student_project,
+button#edit_student_project,
+button[name="clear_form"] {
+  margin: 2vw;
+  width: 20vw;
+  height: 5vw;
+  background: rgb(178, 18, 18);
+  border: none;
+  color: aliceblue;
+  font-size: 2vw;
+}
+
+button[name="add_student"]:hover,
+button[name="edit_student"]:hover,
+button#add_student_project:hover,
+button#edit_student_project:hover,
+button[name="clear_form"]:hover {
+  filter: brightness(120%);
+  color: #ffaa5b;
+  transition: all 300ms linear;
+}
+
+button[name="add_student"]:active,
+button[name="edit_student"]:active,
+button#add_student_project:active,
+button#_edit_student_project:active {
+  color: aliceblue;
+  background-color: #b7c3ce;
+}
+
+button.add_student_project:hover,
+button.add_student_project:focus,
+button.student_info:hover,
+button.student_info:focus,
+button.edit_info:hover,
+button.edit_info:focus,
+button.student_exit:hover,
+button.student_exit:focus,
+button.student_curriculum:hover,
+button.student_curriculum:focus,
+button.exit_student_curriculum:hover,
+button.exit_student_curriculum:focus,
+.student_version button.exit_student_curriculum:hover,
+.student_version button.exit_student_curriculum:focus,
+button.edit_student_curriculum_modal:hover,
+button.edit_student_curriculum_modal:focus,
+button.add_student_curriculum_modal:hover,
+button.add_student_curriculum_modal:focus,
+button.delete_student:hover,
+button.delete_student:focus,
+button.delete_student_confirmation:hover,
+button.delete_student_confirmation:focus,
+button.cancel_delete_student_confirmation:hover,
+button.cancel_delete_student_confirmation:focus,
+button.delete_student_curriculum_modal:hover,
+button.delete_student_curriculum_modal:focus,
+button.delete_student_project_confirmation:hover,
+button.delete_student_project_confirmation:focus,
+button.cancel_delete_student_project_confirmation:hover,
+button.cancel_delete_student_project_confirmation:focus {
+  background: rgb(33, 80, 97);
+  filter: brightness(120%);
+  transform: scale(1.1);
+  color: white;
+  transition: all ease-in-out 301ms;
+}
+
+button.add_student_project:active,
+button.student_info:active,
+.nav>li:active,
+button.delete_student:active,
+button.exit_student_curriculum:active,
+button.add_student_curriculum_modal:active,
+button.edit_student_curriculum_modal:active,
+button.delete_student_curriculum_modal:active,
+button.student_exit:active,
+button.edit_info:active,
+button.student_curriculum:active {
+  color: #ffaa5b;
+  filter: brightness(130%);
+  transform: scale(1.2);
+  transition: all linear 200ms;
+}
+
+button.student_exit {
+  display: inline-block;
+  width: 20vw;
+  margin-right: 3vw;
+  height: 3vw;
+  color: white;
+  font-size: 2vw;
+}
+
+button.edit_info,
+button.student_curriculum {
+  display: inline-block;
+  width: 20vw;
+  height: 3vw;
+  color: white;
+  font-size: 2vw;
+}
+
+button.student_curriculum {
+  margin-left: 3vw;
+  width: 20vw;
+}
+
+.nav li:hover,
+.nav li:focus {
+  transform: scale(1.1);
+  transition: all linear 300ms;
+}
+
+input:focus {
+  border: 2px solid rgb(178, 18, 18);
+  transform: scale(1.1, 1.3);
+  transition: all linear 300ms;
+}
+
+.student_modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  text-align: center;
+  background: rgba(0, 80, 144, 0.45);
+}
+
+.student_curriculum_container {
+  position: fixed;
+  text-align: center;
+  z-index: 1000;
+  height: 96vh;
+  width: 77vw;
+  left: -1vw;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: .3vw solid black;
+  background: rgba(255, 255, 255, 0.87);
+  overflow: auto;
+}
+
+.student_main_info {
+  width: 80vw;
+  height: 80vh;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: .2vw solid black;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.91);
+  z-index: 200;
+  overflow: auto;
+  box-shadow: 0.2vw 0.1vw 0.6vw rgba(53, 52, 52, 0.54);
+}
+
+.student_main_info h2 {
+  font-family: Trocchi;
+  margin-top: 3vw;
+  color: white;
+  z-index: 1000;
+  position: relative;
+  font-size: 2vw;
+}
+
+.student_main_info p {
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+
+.student_main_info>div.columns>p span {
+  font-weight: 400;
+}
+
+div.frame_bottom,
+div.frame_top,
+div.frame_left,
+div.frame_right {
+  color: rgba(0, 0, 0, 0);
+}
+
+.frame_bottom {
+  position: absolute;
+  bottom: 0;
+  height: 6.5vh;
+  z-index: 1300;
+  width: 100%;
+}
+
+.frame_top {
+  position: absolute;
+  top: 0;
+  height: 10.5vh;
+  z-index: 1300;
+  width: 100%;
+}
+
+.frame_left {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 1300;
+  width: 9.5vw;
+}
+
+.frame_right {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  z-index: 1300;
+  width: 9.5vw;
+}
+
+.columns {
+  column-count: 3;
+  margin: 0 3vw;
+  height: auto;
+  min-height: 11vw;
+}
+
+p.email {
+  margin-bottom: 12vh;
+  z-index: 1000;
+  position: relative;
+  color: whitesmoke;
+  font-size: 1.5vw;
+}
+
+p.street_address_2,
+p.lesson_duration {
+  margin-bottom: 4vw;
+}
+
+p.parent_name {
+  margin-bottom: 1vw;
+}
+
+.comments_container {
+  overflow: auto;
+  height: 75px;
+}
+
+.color_strip {
+  position: absolute;
+  width: 100%;
+  height: 10vw;
+}
+
+div.flex-viewport {
+  overflow: hidden;
+  position: relative;
+  height: auto;
+}
+
+div.flex-viewport li {
+  width: 503px;
+  margin-right: 0px;
+  float: left;
+  display: block
+}
+
+div.flex-viewport>ul.slides {
+  width: 1200%;
+  transition-duration: 0.6s;
+  transform: translate3d(-1006px, 0px, 0px);
+}
+
+.flex-viewport {
+  height: 12vw;
+}
+
+.flexslider {
+  height: 27vw;
+  margin-bottom: 3vw;
+  text-align: center;
+}
+
+ul.slides p {
+  color: white;
+  font-family: Trocchi;
+  font-size: 1.5vw;
+}
+
+p.no_projects {
+  margin-top: 6vw;
+  font-size: 3vw;
+}
+
+p.project_number {
+  margin-top: 1vw;
+}
+
+.project_container p.project_name {
+  margin-top: 1vw;
+  font-size: 3vw;
+}
+
+div.project_container {
+  height: 26vw;
+}
+
+button.exit_student_curriculum,
+button.edit_student_curriculum_modal,
+button.add_student_curriculum_modal,
+button.delete_student_curriculum_modal {
+  margin-top: 0vw;
+  color: white;
+  height: 4vw;
+  font-size: 1.5vw;
+  width: 14vw;
+  margin: 0 1vw;
+}
+
+div.teacher_project_container {
+  overflow: auto;
+  height: 6vw;
+}
+
+div.student_not_found.popIn {
+  margin-top: 16vw;
+  font-family: trocchi;
+}
+
+div.student_not_found>h2 {
+  color: white;
+}
+
+.student_curriculum_container.student_version.slowPopIn {
+  position: relative;
+  z-index: 0;
+  margin-top: 4vw;
+}
+
+.student_version button.exit_student_curriculum {
+  background: rgb(178, 18, 18);
+}
+
+.curriculum_image {
+  background: url('./../images/curriculum_new.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 2vw;
+  filter: brightness(92%) opacity(0.75);
+  z-index: -1;
+}
+
+@media screen and (max-width: 840px) {
+  div.card {
+    width: 33vw;
+    margin: 5vw auto;
+    height: 39vw;
+  }
+  p.lesson_time {
+    padding: 0;
+    margin: 2vw;
+    font-size: 2vw;
+  }
+  p.lesson_duration {
+    margin: 0;
+  }
+  p.student_basic_info {
+    font-size: 2vw;
+  }
+  button.add_student_project,
+  button.student_info,
+  button.delete_student {
+    width: 19vw;
+    font-size: 1.5vw;
+    padding-top: 1vw;
+    padding-bottom: 1.3vw;
+    margin-bottom: 0vw;
+    margin-top: 2.4vw;
+    height: 5vw;
+  }
+  .card_color {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 25vw;
+  }
+  .student_main_info {
+    height: 34vw;
+    width: 90vw;
+  }
+  h2.student_name {
+    font-size: 3vw;
+    margin-top: 2vw;
+  }
+  .student_main_info p {
+    font-size: 1.7vw;
+  }
+  button.student_curriculum,
+  button.student_exit,
+  button.edit_info {
+    width: 25vw;
+    font-size: 2vw;
+  }
+  .columns {
+    width: 80vw;
+    text-align: center;
+    margin: 0 auto;
+    height: 13vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  label {
+    display: block;
+    font-size: 3vw;
+  }
+  label#add_label,
+  label#edit_label {
+    display: inline-block;
+  }
+  div.card {
+    width: 53vw;
+    margin: 5vw auto;
+    height: 50vw;
+  }
+  p.lesson_time {
+    padding: 0;
+    margin: 0;
+  }
+  p.student_basic_info {
+    font-size: 2vw;
+    margin: 2vw 0;
+  }
+  button.add_student_project,
+  button.student_info {
+    width: 18vw;
+    font-size: 1.9vw;
+    padding-top: 1vw;
+    height: auto;
+    margin: 3vw 2vw;
+    margin-top: 5vw;
+  }
+  button.delete_student {
+    font-size: 1.9vw;
+    padding-top: 1vw;
+  }
+}
+
+@media only screen and (max-device-height: 1024px) and (max-device-width: 768px) {
+  nav {
+    height: 33vw;
+  }
+  .nav {
+    flex-wrap: wrap;
+    height: 33vw;
+  }
+  .nav li {
+    width: 100vw;
+    font-size: 3.8vw;
+    border-bottom: .2vw white solid;
+    height: 8vw;
+    padding-top: 1.3vw;
+  }
+  li#logged_in {
+    font-size: 4vw;
+  }
+  li#logged_in br {
+    display: none
+  }
+  li#logged_in span {
+    margin-left: 1vw;
+  }
+  h1.dashboard_welcome {
+    margin-top: 40vw;
+    margin-top: 40vw;
+    margin-bottom: 10vw;
+    font-size: 7vw;
+  }
+  h2.features {
+    margin-bottom: 10vw;
+    font-size: 3.5vw;
+  }
+  .curriculum_image {
+    height: 180vw;
+    filter: brightness(90%);
+  }
+  h1.add_student_project,
+  h1.add_student_header,
+  .studentList h1 {
+    margin-top: 40vw;
+    font-size: 8vw;
+  }
+  form.project input,
+  form.signup input {
+    height: 8vw;
+    font-size: 4vw;
+    margin-top: 2vw;
+    margin-bottom: 5vw;
+  }
+  input#first_name,
+  input#last_name,
+  input#parent_last_name,
+  input#parent_first_name,
+  input#student_first_name,
+  input#student_last_name {
+    width: 45vw;
+  }
+  input#student_email {
+    width: 45vw;
+  }
+  input#project_name,
+  input#project_description {
+    width: 60vw;
+  }
+  input#street_address {
+    width: 55vw;
+  }
+  input#apartment_number {
+    width: 15vw
+  }
+  input#city {
+    width: 40vw;
+  }
+  select#state,
+  select#weekday {
+    height: 7vw;
+    font-size: 3vw;
+    width: 30vw;
+  }
+  select#weekday {
+    margin-bottom: 4vw;
+    margin-top: 3vw;
+  }
+  label[for="startTime"],
+  label[for="endTime"] {
+    display: block;
+  }
+  label[for="project_comments"] {
+    margin-bottom: 3vw;
+  }
+  label[for="add_student_project"],
+  label[for="edit_student_project"] {
+    margin: 5vw 0;
+  }
+  input#zipcode {
+    width: 30vw;
+  }
+  input#add_student_project,
+  input#edit_student_project,
+  input#add_student,
+  input#edit_student {
+    height: 3vw;
+    width: 3vw;
+  }
+  textarea#project_comments {
+    font-size: 4vw;
+    margin-top: 3vw;
+    height: 40vw;
+  }
+  .errors .error {
+    font-size: 3vw;
+    margin: 1vw;
+  }
+  fieldset {
+    font-size: 5vw;
+  }
+  form.project>label {
+    font-size: 4vw;
+    margin: 4vw 0 5vw 0;
+  }
+  .nav li:nth-child(1),
+  .nav li:nth-child(3) {
+    width: 100%;
+    margin: 0;
+  }
+  input#student_search {
+    height: 7vw;
+    font-size: 4vw;
+  }
+  select#sort {
+    height: 7vw;
+    font-size: 3vw;
+    width: 28vw;
+    margin-left: 2vw;
+    position: relative;
+    top: -.5vw;
+  }
+  button#add_student_project,
+  button#edit_student_project,
+  button[name="add_student"],
+  button[name="edit_student"],
+  button[name="clear_form"] {
+    height: 8vw;
+    width: 30vw;
+    margin-bottom: 10vw;
+    font-size: 3vw;
+  }
+  .student_main_info {
+    height: 86vw;
+  }
+  .columns {
+    height: 32vw;
+  }
+  .student_main_info p {
+    font-size: 2.8vw;
+  }
+  button.student_exit,
+  button.edit_info,
+  button.student_curriculum {
+    margin-top: 10vw;
+    height: 6vw;
+  }
+  section.slider {
+    padding-top: 28vw;
+    padding-bottom: 5vw;
+  }
+  .flexslider {
+    height: 56vw;
+  }
+  .flex-control-paging li a {
+    height: 2vw;
+    width: 2vw;
+  }
+  .flex-control-nav {
+    height: 4vw;
+  }
+  button.exit_student_curriculum,
+  button.add_student_curriculum_modal,
+  button.edit_student_curriculum_modal,
+  button.delete_student_curriculum_modal {
+    height: 7vw;
+    font-size: 2.2vw;
+    width: 17vw;
+  }
+  div.project_container p {
+    font-size: 3vw;
+  }
+  button.add_student_project,
+  button.student_info,
+  button.delete_student {
+    font-size: 2.1vw;
+    width: 21.7vw;
+    /* height: 8vw; */
+    padding: 1vw;
+    font-weight: 400;
+    display: inline-block;
+    position: relative;
+  }
+  button.delete_student {
+    margin-top: 4vw;
+  }
+  ul.slides {
+    height: 52vw;
+    overflow: auto;
+  }
+  .slides p.no_projects {
+    font-size: 4vw;
+  }
+  .slides p.errors {
+    margin: 2vw;
+    font-size: 3vw
+  }
+  div.student_container p {
+    font-size: 3.5vw;
+    margin-top: 4vw;
+  }
+  .delete_student_confirmation_container {
+    height: 45vw;
+    width: 70vw;
+    margin-top: 60vw;
+  }
+  button.delete_student_confirmation,
+  button.cancel_delete_student_confirmation {
+    height: 5vw;
+    margin-top: 5vw;
+    font-size: 3vw;
+  }
+  .student_curriculum_container {
+    width: 90vw;
+  }
+  div.project_container {
+    height: 48vw;
+    margin-top: 3vw;
+  }
+  div.teacher_project_container {
+    height: 10vw;
+  }
+  div.delete_student_project_confirmation_container.popIn {
+    height: 45vw;
+    width: 60vw;
+    margin-top: 60vw;
+  }
+  button.delete_student_project_confirmation,
+  button.cancel_delete_student_project_confirmation {
+    height: 6vw;
+    margin-bottom: 4vw;
+    margin-top: 3vw;
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 39/34) {
+  h1.dashboard_welcome,
+  h1.add_student_header,
+  h1.add_student_project,
+  div.studentList.popIn h1 {
+    margin-top: 10vw;
+    font-size: 6vw;
+  }
+  .student_main_info {
+    height: 50vw;
+  }
+  .columns {
+    height: 20vw;
+  }
+  div.student_curriculum_container {
+    height: 60vw;
+  }
+  body section.slider {
+    margin-top: 15vw;
+  }
+  .curriculum_image {
+    height: 150vw;
+  }
+  h2.features {
+    margin-bottom: 7vw;
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-device-height: 732px) and (max-device-width: 412px) {
+  div.student_curriculum_container {
+    height: 95vw;
+  }
+  body section.slider {
+    margin-top: 0vw;
+    padding-top: 10vw;
+  }
+  p.optional_text {
+    font-size: 4vw;
+  }
+
+  button.add_student_project, button.student_info, button.delete_student {
+    height: 6vw;
+    width: 21.7vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 8/5) {
+  div.curriculum_image {
+    height: 60vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 16/9) {
+  div.curriculum_image {
+    height: 57vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 4/3) {
+  div.curriculum_image {
+    height: 76vw;
+  }
+  h1 {
+    margin-top: 10vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 2/1) {
+  div.curriculum_image {
+    height: 51vw;
+  }
+  h1 {
+    margin-top: 10vw;
+  }
+}
+
+@media only screen and (aspect-ratio: 3/2) {
+  div.curriculum_image {
+    height: 68vw;
+  }
+}
+
+@media only screen and (max-height: 412px) and (max-device-width: 732px) {
+  .nav {
+    flex-wrap: initial;
+  }
+  nav {
+    height: 8vw;
+  }
+  .nav>li {
+    border: none;
+    font-size: 2vw;
+    padding-top: 1.vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+  div.nav>li#logged_in {
+    font-size: 2vw;
+    margin-left: 3vw;
+  }
+  .nav li:nth-child(1),
+  .nav li:nth-child(3) {
+    margin: 0;
+  }
+  h1.add_student_project,
+  h1.add_student_header,
+  .studentList h1 {
+    margin-top: 8vw;
+  }
+  div.card {
+    height: 70vw;
+    width: 40vw;
+  }
+  div.card_color {
+    height: 38vw;
+  }
+  button.delete_student {
+    margin-top: 3vw;
+  }
+  button.add_student_project {
+    margin-top: 5vw;
+  }
+  div.student_main_info {
+    height: 50vw;
+  }
+  div.columns {
+    height: 18vw;
+  }
+  button.student_exit,
+  button.edit_info,
+  button.student_curriculum {
+    margin-top: 4vw;
+  }
+  div.student_curriculum_container {
+    height: 94vh;
+  }
+  section.slider {
+    height: 36vw;
+    padding: 0vw;
+  }
+  div.flexslider {
+    height: 35vw;
+  }
+  div.project_container p {
+    font-size: 2vw;
+  }
+  h1.dashboard_welcome {
+    margin-top: 8vw;
+    margin-bottom: 1vw;
+  }
+  h2.features {
+    font-size: 3vw;
+    margin: 2vw;
+  }
+  h2.features.F_one {
+    margin-top: 0px;
+  }
+  label[for="add_student_project"],
+  label[for="edit_student_project"],
+  label[for="add_student"],
+  label[for="edit_student"] {
+    font-size: 3vw;
+  }
+  div.student_container p {
+    margin-top: 6.6vw;
+  }
+}
