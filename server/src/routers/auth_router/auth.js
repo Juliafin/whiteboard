@@ -7,9 +7,9 @@ const mongoose = require('mongoose');
 const path = require('path');
 const {
   SECRET
-} = require('../../config_variables');
+} = process.env;
 const morgan = require('morgan');
-const faker = require('faker');
+const faker = require('@faker-js/faker');
 
 auth_router.use(morgan('combined'));
 
@@ -17,7 +17,7 @@ mongoose.Promise = global.Promise;
 
 const {
   User
-} = require('../../user_models/users');
+} = require('../../models/user/user');
 
 auth_router.use(bodyParser.json());
 auth_router.use(bodyParser.urlencoded({

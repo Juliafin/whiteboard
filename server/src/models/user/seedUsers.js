@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
-const faker = require('faker')
-const {User} = require('./users');
+const { fakerEN: faker } = require('@faker-js/faker');
+
+const {User} = require('./user');
 
 function generateUser(role=false) {
   console.log('Seeding one user to the db');
-  const username = `${faker.random.word().replace(/-/g, "").trim().substring(0, 13)}` + `${faker.random.number(99999)}`;
+  const username = `${faker.string.alpha().replace(/-/g, "").trim().substring(0, 13)}` + `${faker.number.int({ max: 9999})
+}`;
   const user = {
     first_name: faker.name.firstName(),
     last_name: faker.name.lastName(),

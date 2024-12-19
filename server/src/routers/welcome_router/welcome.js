@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const welcome_router = express.Router();
 const path = require('path');
 const express_jwt = require('express-jwt');
-const {SECRET} = require(path.join(process.cwd() + '/config_variables.js'));
+const { SECRET } = process.env;
 const jwt = require('jsonwebtoken');
 
 

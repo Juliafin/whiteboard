@@ -1,12 +1,11 @@
-// function fake
-
 const mongoose = require('mongoose');
 const {
   Curriculum
-} = require('./models');
-const faker = require('faker');
-const {generateUser} = require('../../user_models/seedUsers');
+} = require('./student');
+const { fakerEN: faker } = require('@faker-js/faker');
+const {generateUser} = require('../user/seedUsers');
 const student = generateUser('student');
+
 
 mongoose.Promise = global.Promise;
 
@@ -59,9 +58,9 @@ function generateFakeCurriculumData(numberOfStudentRecords,condition, res) {
           parent_last_name: faker.name.lastName(),
           address: {
             street_address: faker.address.streetAddress(),
-            city: faker.address.city(),
-            state: faker.address.stateAbbr(),
-            zipcode: faker.address.zipCode()
+            city: faker.location.city(),
+            state: faker.location.state({abbreviated: true}),
+            zipcode: faker.location.zipCode()
           },
           student_curriculum: [{
             project_name: `${faker.hacker.verb()} ${faker.hacker.noun()}`,
@@ -81,9 +80,9 @@ function generateFakeCurriculumData(numberOfStudentRecords,condition, res) {
           },
           teacher_comments: faker.lorem.paragraphs(),
           author: {
-            id: res.id,
-            first_name: res.first_name,
-            last_name: res.last_name            
+            id: res?.id,
+            first_name: res?.first_name || faker.person.firstName(),
+            last_name: res?.last_name || faker.person.lastName()            
           }
         })
         .then((student) => {
