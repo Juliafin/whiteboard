@@ -6,7 +6,6 @@ const express = require('express');
 const morgan = require('morgan');
 
 const mongoose = require('mongoose');
-// mongoose.Promise = global.Promise;
 
 const {
   PORT,
@@ -47,27 +46,6 @@ app.use('*', (req, res) => {
 let server;
 
 async function runServer(databaseUrl = DATABASE_URL, port = PORT) {
-  // return new Promise((resolve, reject) => {
-  //   mongoose.connect(databaseUrl, (err) => {
-  //     if (err) {
-  //       return reject(err);
-  //     }
-  //     server = app.listen(port, () => {
-  //         console.log(`Your app is listening on port ${port}`);
-
-  //         resolve(server);
-  //       })
-  //       .on('error', err => {
-  //         mongoose.disconnect();
-  //         reject(err);
-  //       });
-  //   });
-  //   mongoose.connection.once('open', () => {
-
-
-  //     console.log('mongoose connected');
-  //   });
-  // });
 
   try {
     await mongoose.connect(databaseUrl)

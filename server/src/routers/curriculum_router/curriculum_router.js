@@ -15,8 +15,7 @@ const {
 } = process.env;
 
 
-mongoose.Promise = global.Promise;
-curriculum_router.use(bodyParser.urlencoded({     extended: true }));
+curriculum_router.use(bodyParser.urlencoded({ extended: true }));
 curriculum_router.use(bodyParser.json());
 curriculum_router.use(express_jwt({
   secret: SECRET

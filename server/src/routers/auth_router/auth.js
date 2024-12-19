@@ -9,11 +9,8 @@ const {
   SECRET
 } = process.env;
 const morgan = require('morgan');
-const faker = require('@faker-js/faker');
 
 auth_router.use(morgan('combined'));
-
-mongoose.Promise = global.Promise;
 
 const {
   User
